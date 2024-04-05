@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="content">
+        <h1>Counter</h1>
+        <h1 class="value">0</h1>
+        <div>
+          <button>DECREASE</button>
+          <button>RESET</button>
+          <button>INCREASE</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const btns = document.querySelectorAll(".content button");
+      const value = document.querySelector(".value");
+      let count = 0;
+
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function(e){
+          const clickBnt = e.currentTarget.innerText;
+          console.log(e.currentTarget.classList);
+
+          if(clickBnt == 'DECREASE') {
+            count --;
+          } else if(clickBnt == 'RESET') {
+            count = 0;
+          } else {
+            count ++;
+          }
+          value.innerHTML = count;
+
+          if(count < 0) {
+            value.style.color = 'red';
+          } else if(count == 0) {
+            value.style.color = 'black';
+          } else {
+            value.style.color = 'green';
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
