@@ -1,65 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href="main.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="background">
-      <div class="content">
-        <h1>Our Revies</h1>
-        <div class="line"></div>
-        <div class="profile">
-          <div>
-            <img />
-          </div>
-          <div>
-            <h1>Susan Smith</h1>
-            <p>WEB DEVELOPER</p>
-            <p>
-              I'm baby meggins twee health goth +1. Bicycle rights tumeric
-              chartreuse before they sold out chambray pop-up. Shaman humblebrag
-              pickled coloring book salvia hoodie, cold-pressed four dollar
-              toast everyday carry
-            </p>
-          </div>
-          <div>
-            <button>&lt;</button>
-            <button>></button>
-          </div>
-        </div>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simon Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href='https://fonts.googleapis.com/css?family=Original+Surfer&effect=emboss' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles.css">
+
+  <audio id="clip1">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
+  </audio>
+  <audio id="clip2">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
+  </audio>
+  <audio id="clip3">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
+  </audio>
+  <audio id="clip4">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+  </audio>
+</head>
+
+<body>
+
+  <div id="outer-circle">
+    <div id="topleft"></div>
+    <div id="topright"></div>
+    <div id="bottomleft"></div>
+    <div id="bottomright"></div>
+    <div id="inner-circle">
+      <div id="title" class="font-effect-emboss">SIMON!</div>
+      <div id="switches">
+        <input type="checkbox" class="toggle" id="on">
+        <button class="button" id="start">Start</button>
+        <input type="checkbox" class="toggle" id="strict">
+      </div>
+      <div class="text1">
+        <span>POWER</span><span>STRICT</span>
+      </div>
+      <div id="turn"></div>
+      <div class="text2">
+        COUNT
       </div>
     </div>
+  </div>
 
-    <script>
-      const btns = document.querySelectorAll(".content button");
-      const value = document.querySelector(".value");
-      let count = 0;
+  <script  src="app.js"></script>
 
-      btns.forEach(function (btn) {
-        btn.addEventListener("click", function (e) {
-          const clickBnt = e.currentTarget.innerText;
-
-          if (clickBnt == "DECREASE") {
-            count--;
-          } else if (clickBnt == "RESET") {
-            count = 0;
-          } else {
-            count++;
-          }
-          value.innerHTML = count;
-
-          if (count < 0) {
-            value.style.color = "red";
-          } else if (count == 0) {
-            value.style.color = "black";
-          } else {
-            value.style.color = "green";
-          }
-        });
-      });
-    </script>
-  </body>
+</body>
 </html>
