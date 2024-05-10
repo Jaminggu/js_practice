@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="content">
+        <strong>
+          <span>Background Color : </span>
+          <span></span>
+        </strong>
+        <button>CLICK ME</button>
+      </div>
+    </div>
+
+    <script>
+        function getRandomColor() {
+            return Math.floor(Math.random() * 0xffffff).toString(16);
+        }
+
+        function setRandomBackgroundColor() {
+          const randomColor = getRandomColor();
+          document.querySelector('.background').style.backgroundColor = `#${randomColor}`;
+          document.querySelector('.content strong > span:nth-child(2)').innerText = `#${randomColor}`;
+          document.querySelector('.content strong > span:nth-child(2)').style.color = `#${randomColor}`;
+        }
+
+        setRandomBackgroundColor();
+
+        const clickButton = document.querySelector('.content button');
+
+        clickButton.addEventListener('click', setRandomBackgroundColor);
+    </script>
+
+  </body>
+</html>
