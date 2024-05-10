@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="center">
+        <h2>장바구니</h2>
+    </div>
+    <table border="1" id="cartTable">
+        <tr>
+            <td><input type="checkbox" id="checkAll"></td>
+            <td>전체선택(<span id="checkedCount">0</span>/<span id="totalCount">0</span>)</td>
+            <td colspan="4"><a>선택삭제</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="itemCheck"></td>
+            <td><img src="img/수박.jpg" width="50px"></td>
+            <td>당도선별 수박 6kg 이상</td>
+            <td>
+                <button class="minusBtn">-</button>
+                <span class="itemCount">1</span>
+                <button class="plusBtn">+</button>
+            </td>
+            <td><span class="itemPrice">18900</span>원</td>
+            <td><button class="delBtn">x</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="itemCheck"></td>
+            <td><img src="img/불고기.jpg" width="50px"></td>
+            <td>양념 소불고기</td>
+            <td>
+                <button class="minusBtn">-</button>
+                <span class="itemCount">1</span>
+                <button class="plusBtn">+</button>
+            </td>
+            <td><span class="itemPrice">19900</span>원</td>
+            <td><button class="delBtn">x</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="itemCheck"></td>
+            <td><img src="img/체리.jpg" width="50px"></td>
+            <td>미국 캘리포니아 생체리</td>
+            <td>
+                <button class="minusBtn">-</button>
+                <span class="itemCount">1</span>
+                <button class="plusBtn">+</button>
+            </td>
+            <td><span class="itemPrice">10900</span>원</td>
+            <td><button class="delBtn">x</button></td>
+        </tr>
+    </table>
+    
+    <script src="main.js"></script>
+</body>
+</html>
